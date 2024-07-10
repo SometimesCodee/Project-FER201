@@ -55,47 +55,17 @@
   ],
   "cars": [
     {
-      "id": "1",
-      "name": "LUV",
-      "price": "78243.02",
-      "year": "2024-07-14",
-      "available": "5",
-      "description": "Driver of special industrial vehicle injured in traf, subs",
+      "id": "",
+      "name": "Honda Civic",
+      "brand": 1,
+      "price": "89898",
+      "year": "2024-07-28",
+      "available": "66",
+      "description": "vip",
       "image": [
         {
-          "id": 1,
-          "name": "https://giaxemercedes.vn/wp-content/uploads/2021/09/Mercedes-g63-amg-giaxemercedes-vn-12.jpg"
-        }
-      ],
-      "brand": "1"
-    },
-    {
-      "id": "2",
-      "name": "pôppopoppo",
-      "brand": 2,
-      "price": "9090909",
-      "year": "2024-07-20",
-      "available": "99",
-      "description": "good",
-      "image": [
-        {
-          "id": 15783,
-          "name": "https://static.danhgiaxe.com/data/201525/aston-martin-vanquish_6443.jpg"
-        }
-      ]
-    },
-    {
-      "id": "3",
-      "name": "popop",
-      "brand": 3,
-      "price": "97878",
-      "year": "2024-07-19",
-      "available": "454",
-      "description": "goood",
-      "image": [
-        {
-          "id": 178276,
-          "name": "https://static.danhgiaxe.com/data/201525/aston-martin-vanquish_6443.jpg"
+          "id": 742453,
+          "name": "https://cdn.honda.com.vn/automobiles/June2022/YEUJcVw0k18hv7iJEUEh.png"
         }
       ]
     }

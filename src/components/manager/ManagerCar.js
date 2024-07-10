@@ -8,6 +8,7 @@ import {
 } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
+import { toast } from 'react-toastify';
 import { deleteCar, fetchBrands, fetchCars } from '../../redux/AdminAction';
 import './ManagerCar.css';
 
@@ -18,6 +19,7 @@ const ManagerCar = () => {
     const [searchedProduct, setSearchedProduct] = useState([]);
     const [paggingProducts, setPaggingProducts] = useState([]);
     const [pagging, setPagging] = useState([]);
+    const [sortConfig, setSortConfig] = useState({ key: '', direction: '' });
     const search = useRef("");
 
     useEffect(() => {
@@ -96,6 +98,7 @@ const ManagerCar = () => {
                 .then(() => {
                     dispatch(deleteCar(id))
                     fetchCarsData(); 
+                    toast.success('succes full')
                 })
                 .catch(error => {
                     console.error('Error deleting product:', error);
@@ -107,6 +110,25 @@ const ManagerCar = () => {
         const [year, day, month] = date.split('-');
         return `${day}/${month}/${year}`;
     }
+
+    const sortProducts = (key) => {
+        let direction = 'ascending';
+        if (sortConfig.key === key && sortConfig.direction === 'ascending') {
+            direction = 'descending';
+        }
+        setSortConfig({ key, direction });
+        let sortedProducts = [...searchedProduct];
+        sortedProducts.sort((a, b) => {
+            if (a[key] < b[key]) {
+                return direction === 'ascending' ? -1 : 1;
+            }
+            if (a[key] > b[key]) {
+                return direction === 'ascending' ? 1 : -1;
+            }
+            return 0;
+        });
+        setSearchedProduct(sortedProducts);
+    };
 
     return (
         <>
@@ -145,10 +167,10 @@ const ManagerCar = () => {
                     <Table striped bordered>
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Price</th>
-                                <th>Year</th>
+                            <th onClick={() => sortProducts('id')}>ID</th>
+                                <th onClick={() => sortProducts('name')}>Name</th>
+                                <th onClick={() => sortProducts('price')}>Price</th>
+                                <th onClick={() => sortProducts('year')}>Year</th>
                                 <th>Available</th>
                                 <th>Description</th>
                                 <td>Logo</td>
@@ -178,7 +200,7 @@ const ManagerCar = () => {
                             ))}
                         </tbody>
                     </Table>
-                    <div>
+                    <div style={{display : 'flex', justifyContent : 'center'}}>
                         {pagging.map((p) => (
                             <button
                                 key={p}

@@ -10,8 +10,8 @@ import {
 } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
 import { addCar, fetchBrands } from '../../redux/AdminAction';
-
 const CreateCar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -53,7 +53,7 @@ const CreateCar = () => {
       available.current.value === "" ||
       description.current.value === ""
     ) {
-      alert("Please fill in all fields!");
+      toast.error("Please fill in all fields!")
     } else {
       try {
         const newCar = {
@@ -70,7 +70,7 @@ const CreateCar = () => {
           .then((res) => {
             if (res.status === 201) {
               dispatch(addCar(res.data))
-              alert("Created successfully");
+              toast.success("Created success fully")
               navigate("/admin");
             }
           });
@@ -86,7 +86,7 @@ const CreateCar = () => {
 
   const addImage = () => {
     if (imageURL.current.value === "") {
-      alert("Please enter an image URL!");
+      toast.error("Please enter an image URL!")
     } else {
       const newImage = {
         id: generateRandomId(),
