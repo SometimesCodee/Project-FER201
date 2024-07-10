@@ -1,0 +1,22 @@
+.manager-car-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar {
+    width: 20%;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+.main-content {
+    width: 80%;
+    padding: 20px;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}

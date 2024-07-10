@@ -7,7 +7,8 @@
       "email": "bcotterrill0@yelp.com",
       "phoneNumber": "855-145-3698",
       "address": "80 Stoughton Center",
-      "role": "admin"
+      "role": "admin",
+      "id": "7f62"
     },
     {
       "userId": 2,
@@ -16,7 +17,8 @@
       "email": "rcrass1@flavors.me",
       "phoneNumber": "570-233-1832",
       "address": "2357 Clove Crossing",
-      "role": "user"
+      "role": "user",
+      "id": "4753"
     },
     {
       "userId": 3,
@@ -25,333 +27,77 @@
       "email": "kpoynser2@weebly.com",
       "phoneNumber": "197-381-3872",
       "address": "6 Marquette Crossing",
-      "role": "user"
+      "role": "user",
+      "id": "747c"
     }
   ],
-
   "brands": [
     {
-      "id": 1,
+      "id": "1",
       "brandName": "Mercedes-Benz"
     },
     {
-      "id": 2,
+      "id": "2",
       "brandName": "Mercury"
     },
     {
-      "id": 3,
+      "id": "3",
       "brandName": "Pontiac"
     },
     {
-      "id": 4,
+      "id": "4",
       "brandName": "Infiniti"
     },
     {
-      "id": 5,
+      "id": "5",
       "brandName": "Mitsubishi"
     }
   ],
-
   "cars": [
     {
-      "id": 1,
+      "id": "1",
       "name": "LUV",
-      "price": 78243.02,
-      "year": "1/30/2024",
-      "available": 5,
+      "price": "78243.02",
+      "year": "2024-07-14",
+      "available": "5",
       "description": "Driver of special industrial vehicle injured in traf, subs",
-      "image": "http://dummyimage.com/115x100.png/5fa2dd/ffffff",
-      "brand": 1
+      "image": [
+        {
+          "id": 1,
+          "name": "https://giaxemercedes.vn/wp-content/uploads/2021/09/Mercedes-g63-amg-giaxemercedes-vn-12.jpg"
+        }
+      ],
+      "brand": "1"
     },
     {
-      "id": 3,
-      "name": "Hombre Space",
-      "price": 55023.51,
-      "year": "1/22/2024",
-      "available": 5,
-      "description": "Chronic systolic (congestive) heart failure",
-      "image": "http://dummyimage.com/172x100.png/5fa2dd/ffffff",
-      "brand": 3
+      "id": "2",
+      "name": "pôppopoppo",
+      "brand": 2,
+      "price": "9090909",
+      "year": "2024-07-20",
+      "available": "99",
+      "description": "good",
+      "image": [
+        {
+          "id": 15783,
+          "name": "https://static.danhgiaxe.com/data/201525/aston-martin-vanquish_6443.jpg"
+        }
+      ]
     },
     {
-      "id": 4,
-      "name": "Expedition",
-      "price": 60960.1,
-      "year": "2/5/2024",
-      "available": 5,
-      "description": "Acute myeloid leuk w multilin dysplasia, not achieve remis",
-      "image": "http://dummyimage.com/121x100.png/ff4444/ffffff",
-      "brand": 4
-    },
-    {
-      "id": 2,
-      "name": "Coupe GT",
-      "price": 90962.19,
-      "year": "5/22/2024",
-      "available": 5,
-      "description": "Fall from dock, initial encounter",
-      "image": "http://dummyimage.com/114x100.png/5fa2dd/ffffff",
-      "brand": 2
-    },
-    {
-      "id": 5,
-      "name": "Century",
-      "price": 54193.76,
-      "year": "9/15/2023",
-      "available": 5,
-      "description": "Complications of internal prosth dev/grft",
-      "image": "http://dummyimage.com/250x100.png/ff4444/ffffff",
-      "brand": 5
-    },
-    {
-      "id": 6,
-      "name": "Sidekick",
-      "price": 98731.4,
-      "year": "4/6/2024",
-      "available": 5,
-      "description": "Poisoning by lysergide [LSD], assault, initial encounter",
-      "image": "http://dummyimage.com/158x100.png/dddddd/000000",
-      "brand": 1
-    },
-    {
-      "id": 7,
-      "name": "CR-X",
-      "price": 66727.98,
-      "year": "7/7/2024",
-      "available": 5,
-      "description": "Subluxation of unspecified scapula, subsequent encounter",
-      "image": "http://dummyimage.com/250x100.png/dddddd/000000",
-      "brand": 2
-    },
-    {
-      "id": 8,
-      "name": "90",
-      "price": 78571.72,
-      "year": "8/9/2023",
-      "available": 5,
-      "description": "Oth osteopor w current path fracture, unsp site, sequela",
-      "image": "http://dummyimage.com/228x100.png/5fa2dd/ffffff",
-      "brand": 3
-    },
-    {
-      "id": 9,
-      "name": "2500",
-      "price": 68787.01,
-      "year": "10/28/2023",
-      "available": 5,
-      "description": "Oth fracture of left lower leg, subs for clos fx w nonunion",
-      "image": "http://dummyimage.com/157x100.png/5fa2dd/ffffff",
-      "brand": 4
-    },
-    {
-      "id": 10,
-      "name": "Swift",
-      "price": 75943.1,
-      "year": "9/23/2023",
-      "available": 5,
-      "description": "Disp fx of base of fifth metacarpal bone, right hand",
-      "image": "http://dummyimage.com/244x100.png/5fa2dd/ffffff",
-      "brand": 5
-    },
-    {
-      "id": 11,
-      "name": "Hombre",
-      "price": 63978.99,
-      "year": "12/13/2023",
-      "available": 5,
-      "description": "Lacerat less saphenous at lower leg level, right leg, subs",
-      "image": "http://dummyimage.com/247x100.png/5fa2dd/ffffff",
-      "brand": 1
-    },
-    {
-      "id": 12,
-      "name": "Ram 1500 Club",
-      "price": 86145.35,
-      "year": "3/7/2024",
-      "available": 5,
-      "description": "Malignant neoplasm of overlapping sites of bronchus and lung",
-      "image": "http://dummyimage.com/100x100.png/dddddd/000000",
-      "brand": 2
-    },
-    {
-      "id": 13,
-      "name": "S2000",
-      "price": 69894.57,
-      "year": "2/24/2024",
-      "available": 5,
-      "description": "Contusion of right ring finger w/o damage to nail, sequela",
-      "image": "http://dummyimage.com/249x100.png/ff4444/ffffff",
-      "brand": 3
-    },
-    {
-      "id": 14,
-      "name": "3500",
-      "price": 91988.72,
-      "year": "3/30/2024",
-      "available": 5,
-      "description": "Juvenile rheumatoid arthritis w systemic onset, l shoulder",
-      "image": "http://dummyimage.com/147x100.png/dddddd/000000",
-      "brand": 4
-    },
-    {
-      "id": 15,
-      "name": "Mariner",
-      "price": 95275.84,
-      "year": "7/15/2023",
-      "available": 5,
-      "description": "Poisoning by caffeine, assault, subsequent encounter",
-      "image": "http://dummyimage.com/190x100.png/ff4444/ffffff",
-      "brand": 5
-    },
-    {
-      "id": 16,
-      "name": "G",
-      "price": 93785.18,
-      "year": "1/22/2024",
-      "available": 5,
-      "description": "Cannabis abuse with psychotic disorder, unspecified",
-      "image": "http://dummyimage.com/144x100.png/5fa2dd/ffffff",
-      "brand": 1
-    },
-    {
-      "id": 17,
-      "name": "Mustang",
-      "price": 68507.13,
-      "year": "11/7/2023",
-      "available": 5,
-      "description": "Puncture wound with foreign body of unspecified upper arm",
-      "image": "http://dummyimage.com/179x100.png/5fa2dd/ffffff",
-      "brand": 1
-    },
-    {
-      "id": 18,
-      "name": "Tracer",
-      "price": 80610.06,
-      "year": "6/5/2024",
-      "available": 5,
-      "description": "Diseases of tongue",
-      "image": "http://dummyimage.com/157x100.png/5fa2dd/ffffff",
-      "brand": 1
-    },
-    {
-      "id": 19,
-      "name": "Corsica",
-      "price": 99817.61,
-      "year": "6/25/2024",
-      "available": 5,
-      "description": "Burkitt lymphoma, unspecified site",
-      "image": "http://dummyimage.com/104x100.png/cc0000/ffffff",
-      "brand": 1
-    },
-    {
-      "id": 20,
-      "name": "S8",
-      "price": 91726.07,
-      "year": "2/25/2024",
-      "available": 5,
-      "description": "Pathological fracture in oth disease, unsp humerus, sequela",
-      "image": "http://dummyimage.com/219x100.png/5fa2dd/ffffff",
-      "brand": 2
-    },
-    {
-      "id": 21,
-      "name": "240",
-      "price": 60547.03,
-      "year": "4/26/2024",
-      "available": 5,
-      "description": "Inj oth flexor musc/fasc/tend at forearm level, left arm",
-      "image": "http://dummyimage.com/147x100.png/dddddd/000000",
-      "brand": 1
-    },
-    {
-      "id": 22,
-      "name": "F-Series",
-      "price": 78385.51,
-      "year": "9/3/2023",
-      "available": 5,
-      "description": "Crushing injury of skull, initial encounter",
-      "image": "http://dummyimage.com/183x100.png/dddddd/000000",
-      "brand": 2
-    },
-    {
-      "id": 23,
-      "name": "Elan",
-      "price": 60171.24,
-      "year": "3/3/2024",
-      "available": 5,
-      "description": "Accidental malfunction of other larger firearm, subs encntr",
-      "image": "http://dummyimage.com/105x100.png/cc0000/ffffff",
-      "brand": 2
-    },
-    {
-      "id": 24,
-      "name": "200SX",
-      "price": 53313.57,
-      "year": "2/18/2024",
-      "available": 5,
-      "description": "Poisn by oth nonopio analges/antipyret, NEC, self-harm, init",
-      "image": "http://dummyimage.com/192x100.png/5fa2dd/ffffff",
-      "brand": 4
-    },
-    {
-      "id": 25,
-      "name": "Concorde",
-      "price": 93485.88,
-      "year": "10/25/2023",
-      "available": 5,
-      "description": "Abnormalities of size and form of teeth",
-      "image": "http://dummyimage.com/111x100.png/ff4444/ffffff",
-      "brand": 2
-    },
-    {
-      "id": 26,
-      "name": "Corvette",
-      "price": 59852.88,
-      "year": "1/27/2024",
-      "available": 5,
-      "description": "Unspecified open wound of lower leg",
-      "image": "http://dummyimage.com/152x100.png/cc0000/ffffff",
-      "brand": 2
-    },
-    {
-      "id": 27,
-      "name": "Regal",
-      "price": 62164.46,
-      "year": "2/10/2024",
-      "available": 5,
-      "description": "Pretrm prem ROM, onset labor w/n 24 hours of rupt, first tri",
-      "image": "http://dummyimage.com/143x100.png/ff4444/ffffff",
-      "brand": 2
-    },
-    {
-      "id": 28,
-      "name": "V70",
-      "price": 52141.69,
-      "year": "4/15/2024",
-      "available": 5,
-      "description": "Disp fx of glenoid cav of scapula, r shldr, 7thD",
-      "image": "http://dummyimage.com/180x100.png/5fa2dd/ffffff",
-      "brand": 2
-    },
-    {
-      "id": 29,
-      "name": "Corvette",
-      "price": 70722.94,
-      "year": "12/10/2023",
-      "available": 5,
-      "description": "Scleritis with corneal involvement",
-      "image": "http://dummyimage.com/207x100.png/dddddd/000000",
-      "brand": 2
-    },
-    {
-      "id": 30,
-      "name": "Optima",
-      "price": 54483.9,
-      "year": "6/28/2024",
-      "available": 5,
-      "description": "Obstruction of gallbladder",
-      "image": "http://dummyimage.com/124x100.png/dddddd/000000",
-      "brand": 3
+      "id": "3",
+      "name": "popop",
+      "brand": 3,
+      "price": "97878",
+      "year": "2024-07-19",
+      "available": "454",
+      "description": "goood",
+      "image": [
+        {
+          "id": 178276,
+          "name": "https://static.danhgiaxe.com/data/201525/aston-martin-vanquish_6443.jpg"
+        }
+      ]
     }
   ]
 }
