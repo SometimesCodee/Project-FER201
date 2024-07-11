@@ -29,6 +29,15 @@
       "address": "6 Marquette Crossing",
       "role": "user",
       "id": "747c"
+    },
+    {
+      "id": "951b",
+      "userName": "porxyz1234",
+      "password": "123456",
+      "email": "qminh6464@gmail.com",
+      "phoneNumber": "0348765697",
+      "address": "Ha Noi",
+      "role": "user"
     }
   ],
   "brands": [

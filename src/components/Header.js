@@ -21,7 +21,7 @@ export default function Header() {
                         <Nav.Link href="#store-locator" className="text-light" style={{ fontWeight: 'bold' }}>About</Nav.Link>
                     </Nav>
                     <Nav className="ml-auto">
-                        <Nav.Link href="#sign-in" className="btn btn-primary text-light">Sign In</Nav.Link>
+                        <Nav.Link href="/login" className="btn btn-primary text-light">Sign In</Nav.Link>
                     </Nav>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 </Navbar.Collapse>
