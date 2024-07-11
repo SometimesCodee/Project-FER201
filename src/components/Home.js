@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Col, Container, Form, Row, Modal, ModalBody } from 'react-bootstrap';
-import { TbPlayerTrackNextFilled } from "react-icons/tb";
+import { Col, Container, Form, Row } from 'react-bootstrap';
+import { FaCar, FaEnvelope, FaInfoCircle, FaStar, FaTools } from 'react-icons/fa';
+import { GrLinkNext } from "react-icons/gr";
+import { IoIosSearch } from "react-icons/io";
 import { Link } from 'react-router-dom';
 import '../css/Home.css';
 import Footer from './Footer';
-import { IoIosSearch } from "react-icons/io";
-import { GrLinkNext } from "react-icons/gr";
-import { FaCar, FaEnvelope, FaInfoCircle, FaStar, FaTools } from 'react-icons/fa';
 import Header from './Header';
 
 export default function Home() {
@@ -131,7 +130,9 @@ export default function Home() {
         <div>
             <Header className="mb-3"></Header>
             <div className='background mb-5'>
-                <img style={{ width: '100%' }} src='/assets/bg.jpg' alt=''></img>
+                <video style={{ width: '100%' }} autoPlay muted loop>
+                    <source src="/assets/Bugatti Tourbillon - Eu Sento Gabu - 4K.mp4" type="video/mp4" />
+                </video>
                 <div className='container mt-5'>
                     <div className='row'>
                         <div className='col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-4'>
