@@ -4,15 +4,25 @@ import {
     Alert, Button, Col,
     FormControl,
     FormSelect,
+    Nav,
     Row, Table
 } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import { deleteCar, fetchBrands, fetchCars } from '../../redux/AdminAction';
 import './ManagerCar.css';
 
 const ManagerCar = () => {
+
+    const navigate = useNavigate();
+    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+    const handleLogout = () => {
+        localStorage.removeItem("loggedInUser");
+        navigate("/home");
+    };
+
     const dispatch = useDispatch();
     const brands = useSelector(state => state.admin.brand || []);
     const cars = useSelector(state => state.admin.cars || []);
@@ -131,9 +141,28 @@ const ManagerCar = () => {
     };
 
     return (
-        <>
-            <Alert variant="success" className="text-center">
-                <h1>Manager Car</h1>
+         <>
+            <Alert variant="success" className='row'>
+                <h1 className='col-md-12' style={{ textAlign: 'center' }}>Manager Car</h1>
+                <div className='col-md-9'>
+
+                </div>
+                <Nav className="ml-auto col-md-3">
+                        {loggedInUser ? (
+                            <>
+                                <Nav.Link href="#profile" className="text-light" style={{ fontWeight: 'bold',color:"black"}}>
+                                    <h5 style={{color:"black",fontWeight: 'bold'}}>{loggedInUser.userName}</h5>
+                                </Nav.Link>
+                                <Nav.Link onClick={handleLogout} className="btn btn-danger text-light">
+                                    Log Out
+                                </Nav.Link>
+                            </>
+                        ) : (
+                            <Nav.Link href="/login" className="btn btn-primary text-light" style={{display : 'none'}}>
+                                Sign In
+                            </Nav.Link>
+                        )}
+                    </Nav>
             </Alert>
             <Row className="mb-3" style={{ marginLeft: 20 }}>
                 <Col xs={12} md={4} className="mb-2">
@@ -157,7 +186,7 @@ const ManagerCar = () => {
                 </Col>
                 <Col xs={12} md={4} className="text-md-end">
                     <Link to="/addCar">
-                        <Button style={{ width: "100%", fontSize: 20 }} className="btn-dark">
+                        <Button style={{ width: "50%", fontSize: 20 }} className="btn-dark">
                             Create a new product
                         </Button>
                     </Link>
@@ -215,7 +244,8 @@ const ManagerCar = () => {
                 </Col>
             </Row>
         </>
-    );
-};
+    )
+       
+ };
 
 export default ManagerCar;

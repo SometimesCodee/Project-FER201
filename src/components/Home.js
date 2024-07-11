@@ -1,9 +1,9 @@
 import React from 'react'
-
+import Header from './Header'
 export default function Home() {
     return (
         <div>
-            <h1 className='text-center'>Mbappe Showroom</h1>
+            <Header></Header>
         </div>
     )
 }
