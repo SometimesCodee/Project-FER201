@@ -38,6 +38,15 @@
       "phoneNumber": "0348765697",
       "address": "Ha Noi",
       "role": "user"
+    },
+    {
+      "id": "b0b1",
+      "userName": "pham34074@gmail.com",
+      "password": "1234567",
+      "email": "tuanpthe176307@fpt.edu.vn",
+      "phoneNumber": "0963924763",
+      "address": "Thạch hòa",
+      "role": "user"
     }
   ],
   "brands": [
