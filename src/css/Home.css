@@ -1,0 +1,40 @@
+.background {
+  position: relative;
+}
+
+.background img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.body {
+  /* position: relative; */
+  /* top: -200px; */
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.card-text {
+  margin-bottom: 1rem;
+}
+
+.mt-auto {
+  display: flex;
+  align-items: center;
+}
