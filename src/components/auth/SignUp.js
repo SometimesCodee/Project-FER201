@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./signup.css";
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
-
+import { MdHome } from "react-icons/md";
 const SignUp = () => {
   const {
     register,
@@ -73,7 +73,9 @@ const SignUp = () => {
   return (
     <div style={sectionStyle}>
       <div className="back-to-home">
-        <Link to="/">Home</Link>
+        <Link to="/">
+          <MdHome/>   Home
+        </Link>
       </div>
       <div className="container">
         <div className="row align-items-center">
@@ -179,10 +181,10 @@ const SignUp = () => {
 
                 <div className="form-group">
                 <div className="d-flex justify-content-center row">
-                    <button className="btn btn-outline-light mr-2 col-md-5">
-                        <Link style={{textDecoration:"none", color:"wheat"}} to="/login">Sign In</Link>
+                    <button style={{marginBottom:"10px"}} className="btn btn-outline-light mr-2 col-md-5 login">
+                        <Link style={{textDecoration:"none", color:"wheat"}} to="/login">Login</Link>
                         </button>
-                    <button className="btn btn-dark col-md-5" >
+                    <button style={{marginBottom:"10px"}} className="btn btn-dark col-md-5 signup" >
                       Signup
                     </button>
                   </div>

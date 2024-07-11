@@ -150,3 +150,14 @@ small.visible {
 small.hidden {
     visibility: hidden;
 }
+
+@media (max-width: 576px) {
+    .login{
+        max-width: 50%;
+        margin-bottom: 10px;
+    }
+    .signup{
+        max-width: 50%;
+        margin-right: 6px;
+    }
+}

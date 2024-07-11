@@ -148,3 +148,14 @@ small.hidden {
     text-decoration: none;
     color: #212529;
 }
+
+@media (max-width: 576px) {
+    .login{
+        max-width: 50%;
+        margin-bottom: 10px;
+    }
+    .signup{
+        max-width: 50%;
+        margin-right: 6px;
+    }
+}

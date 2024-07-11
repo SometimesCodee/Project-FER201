@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./login.css";
 import { useForm } from "react-hook-form";
-
+import { MdHome } from "react-icons/md";
 const Login = () => {
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
@@ -24,14 +24,13 @@ const Login = () => {
     );
 
     localStorage.setItem("loggedInUser", JSON.stringify(user));
-    
+
     if (user) {
-      if(user.role==="user"){
+      if (user.role === "user") {
         navigate("/home");
-      }else if(user.role==="admin"){
-        navigate('/admin')
+      } else if (user.role === "admin") {
+        navigate("/admin");
       }
-      
     } else {
       alert("Invalid username or password");
     }
@@ -50,11 +49,12 @@ const Login = () => {
   return (
     <div style={sectionStyle}>
       <div className="back-to-home">
-        <Link to="/">Home</Link>
+        <Link to="/">
+          <MdHome/>   Home
+        </Link>
       </div>
       <div className="container">
         <div className="row align-items-center">
-          
           <div className="col-md-6"></div>
 
           <div className="  col-md-6" style={{ border: "5px" }}>
@@ -88,15 +88,21 @@ const Login = () => {
                 {error && <div className="error">{error}</div>}
                 <div className="form-group">
                   <div className="d-flex justify-content-center row">
-                    <button className="btn btn-dark mr-2 col-md-5">Login</button>
-                    <button className="btn btn-outline-light col-md-5" >
-                      <Link to="/signup" style={{textDecoration:"none", color:"wheat"}}>Signup</Link>
+                    <button className="btn btn-dark mr-2 col-md-5 login " style={{marginBottom:"10px"}}>
+                      Login
+                    </button>
+                    <button style={{marginBottom:"10px"}} className="btn btn-outline-light col-md-5 signup">
+                      <Link
+                        to="/signup"
+                        style={{ textDecoration: "none", color: "wheat" }}
+                      >
+                        Signup
+                      </Link>
                     </button>
                   </div>
                 </div>
               </form>
             </div>
-
           </div>
         </div>
       </div>
