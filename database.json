@@ -55,17 +55,32 @@
   ],
   "cars": [
     {
-      "id": "",
-      "name": "Honda Civic",
-      "brand": 1,
-      "price": "89898",
-      "year": "2024-07-28",
-      "available": "66",
-      "description": "vip",
+      "id": "1",
+      "name": "jjj",
+      "price": "6868",
+      "year": "2024-07-13",
+      "available": "5656",
+      "description": "43534",
       "image": [
         {
           "id": 742453,
           "name": "https://cdn.honda.com.vn/automobiles/June2022/YEUJcVw0k18hv7iJEUEh.png"
+        }
+      ],
+      "brand": "1"
+    },
+    {
+      "id": "2",
+      "name": "pôpp",
+      "brand": 4,
+      "price": "5656",
+      "year": "2024-07-07",
+      "available": "4545",
+      "description": "gooo",
+      "image": [
+        {
+          "id": 514814,
+          "name": "https://vnn-imgs-f.vgcloud.vn/2019/03/19/18/o-to-moi-3.jpg"
         }
       ]
     }

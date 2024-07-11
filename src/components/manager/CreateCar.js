@@ -51,7 +51,8 @@ const CreateCar = () => {
       price.current.value === "" ||
       year.current.value === "" ||
       available.current.value === "" ||
-      description.current.value === ""
+      description.current.value === "" ||
+      images.length === 0
     ) {
       toast.error("Please fill in all fields!")
     } else {

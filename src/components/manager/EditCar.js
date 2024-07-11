@@ -10,6 +10,7 @@ import {
   Row,
 } from "react-bootstrap";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function EditCar() {
   const navigate = useNavigate();
@@ -54,7 +55,7 @@ function EditCar() {
 
   const addImage = () => {
     if (imageURL.current.value === "") {
-      alert("Please enter an image URL!");
+      toast.error('Please enter an image URL!')
     } else {
       const newImage = {
         id: Date.now(),
@@ -89,7 +90,7 @@ function EditCar() {
 
     axios.put(`http://localhost:9999/cars/${ProductID}`, updatedProduct)
       .then(() => {
-        alert("Update Success");
+        toast.success('Update success')
         navigate("/admin");
       })
       .catch((error) => {
