@@ -1,0 +1,53 @@
+/* ManagerCar.css */
+.manager-car-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.sidebar {
+    width: 100%;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.main-content {
+    width: 100%;
+    padding: 20px;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* EditCar.css */
+.edit-car-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.back-button {
+    background-color: orange;
+    color: black;
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.image-container img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.image-container button {
+    margin-left: 10px;
+}

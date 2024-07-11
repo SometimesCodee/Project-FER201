@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Navbar, Nav, NavDropdown, Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { ImCart } from "react-icons/im";
+import { useNavigate } from 'react-router-dom';
 
 export default function Header() {
     const [cart, setCart] = useState([]);
@@ -9,6 +10,15 @@ export default function Header() {
         const cartData = JSON.parse(localStorage.getItem('cart')) || [];
         setCart(cartData);
     }, []);
+
+    const navigate = useNavigate();
+    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+    const handleLogout = () => {
+        localStorage.removeItem("loggedInUser");
+        navigate("/home");
+    };
+
     return (
         <div style={{ position: 'fixed', zIndex: 100 }}>
             <Navbar style={{ position: 'fixed', width: '100%', paddingLeft: '5%', paddingRight: '5%', height: '90px', backgroundColor: '#0B0E15' }} expand="lg" className="shadow-sm" >
@@ -28,7 +38,21 @@ export default function Header() {
                     </Nav>
                     <Nav className="ml-auto">
                         <Nav.Link href="/cart" className="text-light mr-3" style={{ fontWeight: 'bold', color: 'orange' }}>Cart <ImCart /> <span style={{ color: '#2ECC71', fontWeight: 'bold' }}>({cart.length})</span></Nav.Link>
-                        <Nav.Link href="#sign-in" className="btn btn-primary text-light">Sign In</Nav.Link>
+
+                        {loggedInUser ? (
+                            <>
+                                <Nav.Link href="#profile" className="text-light" style={{ fontWeight: 'bold' }}>
+                                    {loggedInUser.userName}
+                                </Nav.Link>
+                                <Nav.Link onClick={handleLogout} className="btn btn-danger text-light">
+                                    Log Out
+                                </Nav.Link>
+                            </>
+                        ) : (
+                            <Nav.Link href="/login" className="btn btn-primary text-light">
+                                Sign In
+                            </Nav.Link>
+                        )}
                     </Nav>
                     <Navbar.Toggle aria-controls="basic-navbar-nav " style={{ borderColor: 'white' }} className='mt-3' />
                 </Navbar.Collapse>
