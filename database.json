@@ -72,7 +72,6 @@
     {
       "id": "2",
       "name": "pôpp",
-      "brand": 4,
       "price": "5656",
       "year": "2024-07-07",
       "available": "4545",
@@ -81,8 +80,13 @@
         {
           "id": 514814,
           "name": "https://vnn-imgs-f.vgcloud.vn/2019/03/19/18/o-to-moi-3.jpg"
+        },
+        {
+          "id": 211149,
+          "name": "https://carshop.vn/wp-content/uploads/2022/07/hinh-nen-xe-oto-dep-1.jpg"
         }
-      ]
+      ],
+      "brand": "1"
     }
   ]
 }

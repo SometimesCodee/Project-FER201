@@ -2,9 +2,11 @@ import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import {
   Button,
+  Col,
   Container,
   FormControl,
   FormGroup,
+  FormLabel,
   FormSelect,
   Row
 } from "react-bootstrap";
@@ -12,6 +14,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import { addCar, fetchBrands } from '../../redux/AdminAction';
+import './CreateCar.css';
+
 const CreateCar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -71,7 +75,7 @@ const CreateCar = () => {
           .then((res) => {
             if (res.status === 201) {
               dispatch(addCar(res.data))
-              toast.success("Created success fully")
+              toast.success("Created successfully")
               navigate("/admin");
             }
           });
@@ -103,55 +107,69 @@ const CreateCar = () => {
   };
 
   return (
-    <Container>
-      <Button style={{backgroundColor : 'orange', marginTop : '30px'}}>
+    <Container className="create-car-container">
+      <Button className="back-button" style={{marginTop : '30px'}}>
         <Link to="/admin" style={{color : 'black'}}>Back to Home</Link>
       </Button>
       <Row className="d-flex flex-column">
-        <h1 style={{fontWeight : 'bold'}}>Create Car</h1>
-        <FormGroup>
-          <label>Brand:</label>
-          <FormSelect ref={brandSelect}>
-            {brands.map((b) => (
-              <option key={b.id} value={b.id}>{b.brandName}</option>
-            ))}
-          </FormSelect>
+        <h1 className="create-car-title">Create Car</h1>
+        <FormGroup as={Row}>
+          <FormLabel column sm={2}>Brand:</FormLabel>
+          <Col sm={10}>
+            <FormSelect ref={brandSelect}>
+              {brands.map((b) => (
+                <option key={b.id} value={b.id}>{b.brandName}</option>
+              ))}
+            </FormSelect>
+          </Col>
         </FormGroup>
-        <FormGroup>
-          <label>Name:</label>
-          <FormControl type="text" ref={name} />
+        <FormGroup as={Row} className="form-group-spacing">
+          <FormLabel column sm={2}>Name:</FormLabel>
+          <Col sm={10}>
+            <FormControl type="text" ref={name} />
+          </Col>
         </FormGroup>
-        <FormGroup>
-          <label>Price:</label>
-          <FormControl type="number" ref={price} />
+        <FormGroup as={Row} className="form-group-spacing">
+          <FormLabel column sm={2}>Price:</FormLabel>
+          <Col sm={10}>
+            <FormControl type="number" ref={price} />
+          </Col>
         </FormGroup>
-        <FormGroup>
-          <label>Year:</label>
-          <FormControl type="date" ref={year} />
+        <FormGroup as={Row} className="form-group-spacing">
+          <FormLabel column sm={2}>Year:</FormLabel>
+          <Col sm={10}>
+            <FormControl type="date" ref={year} />
+          </Col>
         </FormGroup>
-        <FormGroup>
-          <label>Available:</label>
-          <FormControl type="number" ref={available} />
+        <FormGroup as={Row} className="form-group-spacing">
+          <FormLabel column sm={2}>Available:</FormLabel>
+          <Col sm={10}>
+            <FormControl type="number" ref={available} />
+          </Col>
         </FormGroup>
-        <FormGroup>
-          <label>Description:</label>
-          <FormControl as="textarea" rows={3} ref={description} />
+        <FormGroup as={Row} className="form-group-spacing">
+          <FormLabel column sm={2}>Description:</FormLabel>
+          <Col sm={10}>
+            <FormControl as="textarea" rows={3} ref={description} />
+          </Col>
         </FormGroup>
-        <FormGroup>
-          <label>Image URL:</label>
-          <FormControl type="text" ref={imageURL} placeholder="Enter image URL" />
-          <Button onClick={addImage} style={{ marginTop: "10px" }} variant="dark">Add Image</Button>
+        <FormGroup as={Row} className="form-group-spacing">
+          <FormLabel column sm={2}>Image URL:</FormLabel>
+          <Col sm={10}>
+            <FormControl type="text" ref={imageURL} placeholder="Enter image URL" />
+            <Button onClick={addImage} className="mt-2" variant="dark">Add Image</Button>
+          </Col>
         </FormGroup>
-        <div>
+        <div className="image-preview-container">
           {images.map((image, index) => (
-            <div key={index} style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-              <img src={image.name} alt={`img-${index}`} style={{ width: 100, height: 100, marginRight: 10 }} />
+            <div key={index} className="image-preview">
+              <img src={image.name} alt={`img-${index}`} className="image-thumbnail" />
               <span>ID: {image.id}</span>
-              <Button variant="danger" onClick={() => removeImage(image.id)} style={{ marginLeft: '10px' }}>Remove</Button>
+              <Button variant="danger" onClick={() => removeImage(image.id)} className="ml-2">Remove</Button>
             </div>
           ))}
         </div>
-        <Button style={{ marginTop: "10px" }} onClick={handleCreate} variant="warning">
+        <Button className="mt-2" onClick={handleCreate} variant="warning">
           Create
         </Button>
       </Row>

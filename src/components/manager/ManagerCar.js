@@ -132,19 +132,21 @@ const ManagerCar = () => {
 
     return (
         <>
-            <Alert variant="success">
-                <h1 style={{ textAlign: 'center' }}>Manager Car</h1>
+            <Alert variant="success" className="text-center">
+                <h1>Manager Car</h1>
             </Alert>
-            <Row style={{ marginTop: 20, marginBottom: 20, marginLeft : 20 }}>
-                <FormSelect onChange={(e) => filterByCategory(e)}>
-                    <option value="all">--Filter By Brand--</option>
-                    {brands.map((b) => (
-                        <option key={b.id} value={b.id}>
-                            {b.brandName}
-                        </option>
-                    ))}
-                </FormSelect>
-                <Col md={4}>
+            <Row className="mb-3" style={{ marginLeft: 20 }}>
+                <Col xs={12} md={4} className="mb-2">
+                    <FormSelect onChange={(e) => filterByCategory(e)}>
+                        <option value="all">--Filter By Brand--</option>
+                        {brands.map((b) => (
+                            <option key={b.id} value={b.id}>
+                                {b.brandName}
+                            </option>
+                        ))}
+                    </FormSelect>
+                </Col>
+                <Col xs={12} md={4} className="mb-2">
                     <FormControl
                         type="text"
                         placeholder="Enter name to search"
@@ -153,21 +155,20 @@ const ManagerCar = () => {
                         onChange={SearchedList}
                     />
                 </Col>
-                <Link to="/addCar">
-                    <Button
-                        style={{ width: "240px", fontSize: 20 }}
-                        className="btn-dark"
-                    >
-                        Create a new product
-                    </Button>
-                </Link>
+                <Col xs={12} md={4} className="text-md-end">
+                    <Link to="/addCar">
+                        <Button style={{ width: "100%", fontSize: 20 }} className="btn-dark">
+                            Create a new product
+                        </Button>
+                    </Link>
+                </Col>
             </Row>
             <Row>
-                <Col md={12}>
-                    <Table striped bordered>
+                <Col xs={12}>
+                    <Table striped bordered responsive>
                         <thead>
                             <tr>
-                            <th onClick={() => sortProducts('id')}>ID</th>
+                                <th onClick={() => sortProducts('id')}>ID</th>
                                 <th onClick={() => sortProducts('name')}>Name</th>
                                 <th onClick={() => sortProducts('price')}>Price</th>
                                 <th onClick={() => sortProducts('year')}>Year</th>
@@ -200,16 +201,15 @@ const ManagerCar = () => {
                             ))}
                         </tbody>
                     </Table>
-                    <div style={{display : 'flex', justifyContent : 'center'}}>
+                    <div className="d-flex justify-content-center">
                         {pagging.map((p) => (
-                            <button
+                            <Button
                                 key={p}
-                                className="btn btn-dark"
-                                style={{ marginLeft: "5px" }}
+                                className="btn-dark mx-1"
                                 onClick={() => Pagging(p)}
                             >
                                 {p}
-                            </button>
+                            </Button>
                         ))}
                     </div>
                 </Col>

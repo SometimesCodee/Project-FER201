@@ -11,7 +11,7 @@ import {
 } from "react-bootstrap";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
-
+import './ManagerCar.css';
 function EditCar() {
   const navigate = useNavigate();
   const defaultProduct = {
@@ -53,12 +53,16 @@ function EditCar() {
       });
   }, [ProductID]);
 
+  const generateRandomId = () => {
+    return Math.floor(Math.random() * 1000000);
+  };
+
   const addImage = () => {
     if (imageURL.current.value === "") {
       toast.error('Please enter an image URL!')
     } else {
       const newImage = {
-        id: Date.now(),
+        id: generateRandomId(),
         name: imageURL.current.value,
       };
       setProduct(prevProduct => ({
@@ -100,8 +104,8 @@ function EditCar() {
 
   return (
     <Container>
-    <Button style={{backgroundColor : 'orange'}}>
-        <Link to="/admin" style={{color : 'black'}}>Back to Home</Link>
+      <Button style={{ backgroundColor: 'orange' }}>
+        <Link to="/admin" style={{ color: 'black' }}>Back to Home</Link>
       </Button>
       <Row>
         <Col md={10} style={{ padding: 10 }}>
@@ -168,8 +172,8 @@ function EditCar() {
             >
               {Brands.map((b) => (
                 <option key={b.id}
-                selected={b.id === Product.brand} 
-                value={b.id}>
+                  selected={b.id === Product.brand}
+                  value={b.id}>
                   {b.brandName}
                 </option>
               ))}
