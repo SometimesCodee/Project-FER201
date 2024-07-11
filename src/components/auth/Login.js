@@ -22,6 +22,9 @@ const Login = () => {
       (user) =>
         user.userName === data.userName && user.password === data.password
     );
+
+    localStorage.setItem("loggedInUser", JSON.stringify(user));
+    
     if (user) {
       if(user.role==="user"){
         navigate("/home");
