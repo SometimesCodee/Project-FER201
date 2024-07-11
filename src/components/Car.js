@@ -8,6 +8,7 @@ import Footer from './Footer';
 import { ImCart } from "react-icons/im";
 import { FaStar } from 'react-icons/fa';
 import Header from './Header';
+import { toast } from 'react-toastify';
 
 export default function Car() {
     const [cars, setCars] = useState([]);
@@ -85,7 +86,7 @@ export default function Car() {
     const renderCars = () => {
         return pagingCar.map(car => (
             <div className="card col-md-4 col-sm-6 col-xs-12 border-0 mb-3" key={car.id}>
-                <img className="card-img-top img-fluid w3-animate-right" src={`/assets/${car.image[0]?.name}`} alt={car.name} />
+                <img className="card-img-top img-fluid w3-animate-right" src={`${car.image[0]?.name}`} alt={car.name} />
                 <div className="card-body">
                     <h4 className="card-title">{car.name}</h4>
                     <p className="card-text">PRICE: {car.price.toLocaleString()} VND</p>
@@ -198,7 +199,7 @@ export default function Car() {
         }
         setCart(coppyCart)
         localStorage.setItem('cart', JSON.stringify(coppyCart))
-        alert('Your product has been added to the cart')
+        toast.success('Product has been added to the cart ')
     }
     useEffect(() => {
         const updateQuantity = cart.reduce((total) => total + 1, 0)
@@ -295,20 +296,20 @@ export default function Car() {
                                     <Carousel.Item key={index}>
                                         <img
                                             className="d-block w-100"
-                                            src={`/assets/${img.name}`}
+                                            src={`${img.name}`}
                                             alt={`Slide ${index}`}
                                         />
                                     </Carousel.Item>
                                 ))}
                             </Carousel>
                             <h1>{selectedCar.name}</h1>
-                            <p><span className='font-weight-bold'>Price:</span> {selectedCar.price.toLocaleString()} VND</p>
-                            <p><span className='font-weight-bold'>Year:</span> {selectedCar.year}</p>
+                            <p><strong>Price:</strong> {selectedCar.price.toLocaleString()} VND</p>
+                            <p><strong >Year:</strong> {selectedCar.year}</p>
                             <p className={selectedCar.available > 0 ? 'text-success' : 'text-danger'}>
-                                <span className='font-weight-bold'>Available:</span> {selectedCar.available > 0 ? 'In stock' : 'Out of stock'}
+                                <strong>Available:</strong> {selectedCar.available > 0 ? 'In stock' : 'Out of stock'}
                             </p>
-                            <p><span className='font-weight-bold'>Description:</span> {selectedCar.description}</p>
-                            <p><span className='font-weight-bold'>Rating: </span>{renderStars(selectedCar.rating)}</p><br />
+                            <p><strong>Description:</strong> {selectedCar.description}</p>
+                            <p><strong>Rating: </strong>{renderStars(selectedCar.rating)}</p><br />
                             <button onClick={() => addToCart(selectedCar)} className='btn btn-outline-warning text-end'>Add to cart now <ImCart /></button>
                         </div>
                     )}

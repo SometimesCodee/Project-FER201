@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { MdHome } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
+import { FaHome } from "react-icons/fa";
 
 const Login = ({ setLogin }) => {
   const { register, handleSubmit } = useForm();
@@ -50,12 +51,9 @@ const Login = ({ setLogin }) => {
 
   return (
     <div style={sectionStyle}>
-      <div className="back-to-home">
-        <Link to="/">
-          <MdHome />   Home
-        </Link>
-      </div>
+
       <div className="container">
+
         <div className="row align-items-center">
           <div className="col-md-6"></div>
 
@@ -89,21 +87,26 @@ const Login = ({ setLogin }) => {
                 </div>
                 {error && <div className="error">{error}</div>}
                 <div className="form-group">
-                  <div className="d-flex justify-content-center row">
-                    <button className="btn btn-dark mr-2 col-md-5 login " style={{ marginBottom: "10px" }}>
-                      Login
-                    </button>
-                    <button style={{ marginBottom: "10px" }} className="btn btn-outline-light col-md-5 signup">
-                      <Link
-                        to="/signup"
-                        style={{ textDecoration: "none", color: "wheat" }}
-                      >
-                        Signup
-                      </Link>
+                  <div className="d-flex justify-content-between  m-0">
+                    <button className="btn btn-primary login " style={{ marginBottom: "10px", width: '100%' }}>
+                      Sign in
                     </button>
                   </div>
                 </div>
+
               </form>
+              <div className="d-flex m-0" style={{ width: '100%' }}>
+                <Link to="/signup" style={{ width: '100%' }}>
+                  <button style={{ marginBottom: "20px", width: '100%' }} className="btn btn-success">
+                    Sign up
+                  </button>
+                </Link>
+              </div>
+              <div className="d-flex justify-content-center">
+                <Link to='/'>
+                  <button className="btn btn-dark">Home <FaHome /></button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./signup.css";
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import { MdHome } from "react-icons/md";
+import { toast } from "react-toastify";
 const SignUp = () => {
   const {
     register,
@@ -15,6 +16,8 @@ const SignUp = () => {
     { userName: "existingUser1", email: "user1@example.com" },
     { userName: "existingUser2", email: "user2@example.com" },
   ]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     console.log(errors);
@@ -48,16 +51,15 @@ const SignUp = () => {
       },
     ]);
 
-    const response = await fetch("http://localhost:9999/users", {
+    await fetch("http://localhost:9999/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     });
-
-    console.log("Đăng ký thành công!");
-    alert("Đăng ký thành công!");
+    toast.success("Đăng ký thành công!");
+    navigate("/login");
   };
 
   const sectionStyle = {
@@ -74,7 +76,7 @@ const SignUp = () => {
     <div style={sectionStyle}>
       <div className="back-to-home">
         <Link to="/">
-          <MdHome/>   Home
+          <MdHome />   Home
         </Link>
       </div>
       <div className="container">
@@ -180,11 +182,11 @@ const SignUp = () => {
                 </div>
 
                 <div className="form-group">
-                <div className="d-flex justify-content-center row">
-                    <button style={{marginBottom:"10px"}} className="btn btn-outline-light mr-2 col-md-5 login">
-                        <Link style={{textDecoration:"none", color:"wheat"}} to="/login">Login</Link>
-                        </button>
-                    <button style={{marginBottom:"10px"}} className="btn btn-dark col-md-5 signup" >
+                  <div className="d-flex justify-content-center row">
+                    <button style={{ marginBottom: "10px" }} className="btn btn-outline-light mr-2 col-md-5 login">
+                      <Link style={{ textDecoration: "none", color: "wheat" }} to="/login">Login</Link>
+                    </button>
+                    <button style={{ marginBottom: "10px" }} className="btn btn-dark col-md-5 signup" >
                       Signup
                     </button>
                   </div>
@@ -192,7 +194,7 @@ const SignUp = () => {
               </form>
             </div>
             <div className="sign-in">
-              
+
             </div>
           </div>
         </div>

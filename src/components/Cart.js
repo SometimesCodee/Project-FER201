@@ -3,6 +3,7 @@ import Footer from './Footer';
 import { FaTrashAlt } from "react-icons/fa";
 import Header from './Header';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 export default function Cart() {
     const [cart, setCart] = useState([]);
@@ -24,18 +25,11 @@ export default function Cart() {
         localStorage.removeItem('cart');
     };
 
-    const handleQuantityChange = (id, quantity) => {
-        const updatedCart = cart.map(item =>
-            item.id === id ? { ...item, quantity: parseInt(quantity) } : item
-        );
-        setCart(updatedCart);
-        localStorage.setItem('cart', JSON.stringify(updatedCart));
-    };
-
     const handleRemoveItem = (id) => {
         const updatedCart = cart.filter(item => item.id !== id);
         setCart(updatedCart);
         localStorage.setItem('cart', JSON.stringify(updatedCart));
+        toast.success("Removed item successfully");
     };
 
     const renderCart = () => {
