@@ -1,10 +1,15 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
 import axios from "axios";
-import "./login.css";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+<<<<<<< HEAD
 import { MdHome } from "react-icons/md";
 const Login = () => {
+=======
+import { Link, useNavigate } from "react-router-dom";
+import "./login.css";
+
+const Login = ({setLogin}) => {
+>>>>>>> bc9aa0490c0aeaa7cd372f437ce8f5b7daa0355e
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
@@ -28,8 +33,14 @@ const Login = () => {
     if (user) {
       if (user.role === "user") {
         navigate("/home");
+<<<<<<< HEAD
       } else if (user.role === "admin") {
         navigate("/admin");
+=======
+      }else if(user.role==="admin"){
+        setLogin(true)
+        navigate('/admin')
+>>>>>>> bc9aa0490c0aeaa7cd372f437ce8f5b7daa0355e
       }
     } else {
       alert("Invalid username or password");

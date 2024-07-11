@@ -2,8 +2,8 @@
   "users": [
     {
       "userId": 1,
-      "userName": "crizziello0",
-      "password": "iE3_J0+US*4|",
+      "userName": "admin",
+      "password": "123",
       "email": "bcotterrill0@yelp.com",
       "phoneNumber": "855-145-3698",
       "address": "80 Stoughton Center",
@@ -81,7 +81,6 @@
     {
       "id": "2",
       "name": "pôpp",
-      "brand": 4,
       "price": "5656",
       "year": "2024-07-07",
       "available": "4545",
@@ -90,8 +89,13 @@
         {
           "id": 514814,
           "name": "https://vnn-imgs-f.vgcloud.vn/2019/03/19/18/o-to-moi-3.jpg"
+        },
+        {
+          "id": 211149,
+          "name": "https://carshop.vn/wp-content/uploads/2022/07/hinh-nen-xe-oto-dep-1.jpg"
         }
-      ]
+      ],
+      "brand": "1"
     }
   ]
 }
