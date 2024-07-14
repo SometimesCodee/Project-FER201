@@ -59,7 +59,7 @@ export default function Header() {
 
                         {loggedInUser ? (
                             <>
-                                <Nav.Link href="#profile" className="text-light" style={{ fontWeight: 'bold' }}>
+                                <Nav.Link as={Link} to={`/customer/profile/${loggedInUser.id}`} className="text-light" style={{ fontWeight: 'bold' }}>
                                     {loggedInUser.userName}
                                 </Nav.Link>
                                 <Nav.Link onClick={handleLogout} className="btn btn-danger text-light">

@@ -16,10 +16,12 @@ export default function Car() {
     const [filteredCars, setFilteredCars] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [selectedCar, setSelectedCar] = useState(null);
+    const [models, setModels] = useState([]);
     const [formData, setFormData] = useState({
         search: '',
-        brand: [],
+        brand: '',
         price: 'all',
+        model: []
     });
     const [paging, setPaging] = useState([]); // page 1, 2, 3, ...
     const [pagingCar, setPagingCar] = useState([]); // cars in a page
@@ -27,11 +29,14 @@ export default function Car() {
     const [quantity, setQuantity] = useState(0);
     const [cart, setCart] = useState([]);
 
+    console.log(formData);
+
     useEffect(() => {
         axios.get('http://localhost:9999/cars')
             .then(res => {
                 setCars(res.data);
                 setFilteredCars(res.data);
+                setModels([...new Set(res.data.map(car => car.model))]);
             })
             .catch(err => {
                 console.log(err);
@@ -49,11 +54,26 @@ export default function Car() {
 
     useEffect(() => {
         filterCars();
+        console.log('filter')
     }, [formData]);
 
     useEffect(() => {
         updatePaging();
     }, [filteredCars, currentPage]);
+
+    const renderBrands = () => {
+        return brands.map((brand, index) => (
+            <div key={index} className="col-md-2" style={{ cursor: "pointer" }} onClick={() => handleBrandClick(brand.id)}>
+                <img style={{ width: "50%" }} src={brand.image} alt=''></img>
+            </div>
+        ));
+    };
+    const handleBrandClick = (brandId) => {
+        setFormData({
+            ...formData,
+            brand: brandId
+        });
+    };
 
     const updatePaging = () => {
         const startIndex = (currentPage - 1) * 6;
@@ -98,14 +118,14 @@ export default function Car() {
         ));
     };
 
-    const renderBrands = () => {
-        return brands.map(brand => (
+    const renderModel = () => {
+        return models.map((model, index) => (
             <Form.Check
-                key={brand.id}
+                key={index}
                 type="checkbox"
-                label={brand.brandName}
-                name='brand'
-                value={brand.id}
+                label={model}
+                name='model'
+                value={model}
                 onChange={handleChange}
                 className="mb-2"
             />
@@ -116,15 +136,15 @@ export default function Car() {
         const { name, value, type, checked } = e.target;
 
         if (type === 'checkbox') {
-            let updatedBrands = [...formData.brand];
+            let updatedModels = [...formData.model];
             if (checked) {
-                updatedBrands.push(parseInt(value));
+                updatedModels.push(value);
             } else {
-                updatedBrands = updatedBrands.filter(brandId => brandId !== parseInt(value));
+                updatedModels = updatedModels.filter(model => model !== value);
             }
             setFormData({
                 ...formData,
-                brand: updatedBrands
+                model: updatedModels
             });
         } else {
             setFormData({
@@ -144,12 +164,16 @@ export default function Car() {
     const filterCars = () => {
         let tempCars = [...cars];
 
+        if (formData.brand) {
+            tempCars = tempCars.filter(car => Number(car.brand) === Number(formData.brand));
+        }
+
         if (formData.search) {
             tempCars = tempCars.filter(car => car.name.toLowerCase().includes(formData.search.toLowerCase()));
         }
 
-        if (formData.brand.length > 0) {
-            tempCars = tempCars.filter(car => formData.brand.includes(car.brand));
+        if (formData.model.length > 0) {
+            tempCars = tempCars.filter(car => formData.model.includes(car.model));
         }
 
         if (formData.price !== 'all') {
@@ -178,8 +202,9 @@ export default function Car() {
     };
 
     const addToCart = (product) => {
-        if (product.available === 0) {
-            alert('The product is out of stock')
+        if (product.available === false) {
+            // alert('The product is out of stock')
+            toast.error('The product is out of stock')
             return;
         }
         let newItem = {
@@ -187,8 +212,7 @@ export default function Car() {
             name: product.name,
             price: product.price,
             image: product.image[0].name,
-            quantity: 1,
-            total: 0
+            quantity: 1
         }
         let coppyCart = [...cart]
         let index = coppyCart.findIndex(item => item.id === product.id)
@@ -211,6 +235,10 @@ export default function Car() {
             <Header className="mb-3" quantity={quantity} />
             <div className='background mb-5'>
                 <img style={{ width: '100%' }} src='/assets/bg.jpg' alt='background' />
+                <h2 className='text-center mb-5 mt-5'>BRAND</h2>
+                <div className='row brands justify-content-center mb-5'>
+                    {renderBrands()}
+                </div>
                 <div className='container mt-5'>
                     <div className='row'>
                         <div className='col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-4'>
@@ -223,8 +251,8 @@ export default function Car() {
                                 />
                             </Form>
                             <div className='mb-4'>
-                                <h6>Brands:</h6>
-                                {renderBrands()}
+                                <h6>Model:</h6>
+                                {renderModel()}
                             </div>
                             <div>
                                 <h6>Price:</h6>
@@ -306,11 +334,11 @@ export default function Car() {
                             <p><strong>Price:</strong> {selectedCar.price.toLocaleString()} VND</p>
                             <p><strong >Year:</strong> {selectedCar.year}</p>
                             <p className={selectedCar.available > 0 ? 'text-success' : 'text-danger'}>
-                                <strong>Available:</strong> {selectedCar.available > 0 ? 'In stock' : 'Out of stock'}
+                                <strong>Available:</strong> {selectedCar.available ? 'In stock' : 'Out of stock'}
                             </p>
                             <p><strong>Description:</strong> {selectedCar.description}</p>
                             <p><strong>Rating: </strong>{renderStars(selectedCar.rating)}</p><br />
-                            <button onClick={() => addToCart(selectedCar)} className='btn btn-outline-warning text-end'>Add to cart now <ImCart /></button>
+                            <button onClick={() => addToCart(selectedCar)} className={`btn btn-outline-warning text-end ${selectedCar.available ? '' : 'disabled'}`}>{selectedCar.available ? 'Add to cart' : 'Out of stock'} <ImCart /></button>
                         </div>
                     )}
                 </Modal.Body>

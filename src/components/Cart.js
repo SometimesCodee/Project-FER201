@@ -4,10 +4,14 @@ import { FaTrashAlt } from "react-icons/fa";
 import Header from './Header';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import axios from 'axios';
 
 export default function Cart() {
     const [cart, setCart] = useState([]);
     const [total, setTotal] = useState(0);
+    const [user, setUser] = useState({});
+    const [loggedInUser, setLoggedInUser] = useState(null);
+
     console.log(cart);
     const naviagte = useNavigate();
 
@@ -19,6 +23,18 @@ export default function Cart() {
     useEffect(() => {
         setTotal(cart.reduce((total, item) => total + (item.price * item.quantity), 0));
     }, [cart]);
+
+    useEffect(() => {
+        const userData = localStorage.getItem('loggedInUser');
+        if (userData) {
+            try {
+                setLoggedInUser(JSON.parse(userData));
+            } catch (e) {
+                console.error('Error parsing user data', e);
+                setLoggedInUser(null);
+            }
+        }
+    }, [])
 
     const handleClearCart = () => {
         setCart([]);
@@ -34,11 +50,10 @@ export default function Cart() {
 
     const renderCart = () => {
         return cart.map((item) => (
-            <tr>
-                <td><img src={`/assets/${item.image}`} className="w-100" alt={item.name} /></td>
+            <tr key={item.id}>
+                <td><img src={`${item.image}`} style={{ width: '50%' }} alt={item.name} /></td>
                 <td><p><strong>{item.name}</strong></p></td>
-                <td><p><strong>Quantity:</strong> {item.quantity}</p></td>
-                <td><p className="text-start text-md-center"><strong>${(item.price * item.quantity).toLocaleString()}</strong></p></td>
+                <td><p className="text-start text-md-center"><strong>{(item.price * item.quantity).toLocaleString()} VND</strong></p></td>
                 <td><button type="button" className="btn btn-danger btn-sm me-1 mb-2" onClick={() => handleRemoveItem(item.id)} title="Remove item">
                     <FaTrashAlt />
                 </button>
@@ -48,9 +63,15 @@ export default function Cart() {
     };
 
     const checkOut = () => {
-        setCart([]);
-        localStorage.removeItem('cart');
-        naviagte('/');
+        try {
+            axios.post('http://localhost:9999/orders', { cart, loggedInUser })
+            setCart([]);
+            localStorage.removeItem('cart');
+            naviagte('/');
+        } catch (err) {
+            toast.error("Checkout failed. Please try again.");
+        }
+
     }
 
 

@@ -1,98 +1,118 @@
 {
+  "orders": [
+    {
+      "id": "8bf6",
+      "cart": [
+        {
+          "id": "5",
+          "name": "THE NEW 4 SERIES",
+          "price": 4700000000,
+          "image": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331cqgv2Z7d%25i02uCaY3MuO2kOHUtWPfbYf6JWl10tLhu1XzWVo7puMLWFmdkAj5DOP7tpmZ8XgY1nTNIowJ4HO3zkyXq%25sGM8snGhMQSk%2508Xc9Vo74giULNF1VgxNJ0%25ls2oub5imC2yRCzXeTt%25ViPRKVZVYF15Wh1DMztz0NeqVYDafaiojmztYRSRHx67aftxdxbqw1RSfWQlSD%25VxdSeZsc3uzWQdjc0UX3aeZQ6KAOPXRjcZwBO4Vrx6Kc%252gF54WwBKupUP8Fe%252B3ibMxIjup2XHhDuv63iprJkyYGwXHi4TnFt9%25rJHFl5RAou4TJIs8efL3FlTv0PwHyXIslGAt9ECrv0s9Of0JE4GA0ogSAqNF9OALUdwnkIogOybQVsnvLUgChZz35GybUEqcaF89ChbNmK1TPoEqhk7B%25lMLNmqn12cUDyk7m5VpK6YCn178zm1otE5V1Pa7V4fN8zVMR1xdSkPazDxVB6dnMRaYWz2YQ5DxRteapDZ8YWxfjRiscPteWS6xHeKMfjedwWJOBDS6jQ%25e5W2Ydw6Zuj8KptQ%25wc3lmeifZu%25KXsnDHSc3uBr08TJdKX324AOpTQBrXpFOgSlZ24riIgUzscpF4HvUnd0KiIFJGb5gABHvIT9hM8O2JGvloqVdgpT9GsLmzbUilo90y7r7bHsLoAC0wvhJ0yLOEA%25qqTACygNO99mlOECUkgtJ7sgNEbnEBM10tNWuR5Eiyr6ktMLWo0CqXhFUOKe",
+          "quantity": 1
+        }
+      ],
+      "loggedInUser": {
+        "id": "4753",
+        "userName": "customer1",
+        "password": "123456",
+        "email": "rcrass1@flavors.me",
+        "phoneNumber": "570-233-1832",
+        "address": "2357 Clove Crossing",
+        "role": "user"
+      }
+    },
+    {
+      "id": "1140",
+      "cart": [
+        {
+          "id": "2",
+          "name": "BWM X4",
+          "price": 1700000000,
+          "image": "https://www.bmw.vn/content/dam/bmw/marketASIA/bmw_vn/navigation-model/new-x4-model-card.jpg",
+          "quantity": 1
+        },
+        {
+          "id": "6",
+          "name": "BMW I3",
+          "price": 4000000000,
+          "image": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331cqgv2Z7d%25i02uCaY3MuO2kOHUtWPfbYf6JiN10tLhu1XzWVo7puMLWFmdkAj5DOPMtExZ8XgY1nTNIowJ4HO3zkyXq%25sGM8snGhMQSk%2508Xc9Vo74gSZWNF1VgxNJ0%25ls2oub5imC2yRCzXeTt%25ViPRKVZVYpzsWh1DMzti08eqVYDafHLojmztYRSJyR67aftxdIXCw1RSfWQvC0%25VxdSeZGheuzWQdjc9ef3aeZQ6KCInXRjcZwBEnmrx6Kc%252Nu74WwBKupk3IFe%252B3in2ZIjup2XH5psv63iprJ8V%25GwXHi4TPBA9%25rJHFlM2oou4TJIsDxgL3FlTv0YWCyXIslGAtqHCrv0s9Ofm6E4GA0ogS73NF9OALUdMRkIogOybQfsnvLUgChZS95GybUEqcdx89ChbNmKizPoEqhk7bqvMLNmqn1hrJDyk7m5VqQ5YCn178zmZntE5V1Pa7cVfN8zVMR1L7SkPazDxVytdnMRaYWB2YQ5DxRte2OVZ8YWxfjpyKcPteWS6iHdKMfjedwHJUBDS6jQ%25J9k2Ydw6ZuTyoptQ%25wc3lO5ifZu%25KXsgJHSc3uBr0W0JdKX324BVwTQBrXpF2zllZ24riIpuuscpF4Hvia00KiIFJGzHlABHvIT9Te1O2kvmRhoId4eVGkCrmX2FsWl6JiY7",
+          "quantity": 1
+        }
+      ],
+      "loggedInUser": {
+        "id": "4753",
+        "userName": "customer1",
+        "password": "123456",
+        "email": "rcrass2@flavors.me",
+        "phoneNumber": "57-233-1832",
+        "address": "257 Clove Crossing",
+        "role": "user"
+      }
+    }
+  ],
   "users": [
     {
-      "userId": 1,
+      "id": "7f62",
       "userName": "admin",
       "password": "123",
       "email": "bcotterrill0@yelp.com",
       "phoneNumber": "855-145-3698",
       "address": "80 Stoughton Center",
-      "role": "admin",
-      "id": "7f62"
+      "role": "admin"
     },
     {
-      "userId": 2,
-      "userName": "mdurgan1",
-      "password": "iT1$WH2P5+UqL<y1",
+      "id": "2",
+      "userName": "customer2",
+      "password": "123456",
       "email": "rcrass1@flavors.me",
       "phoneNumber": "570-233-1832",
       "address": "2357 Clove Crossing",
+      "role": "user"
+    },
+    {
+      "userName": "customer1",
+      "password": "123456",
+      "email": "dinhvuong2311@gmail.com",
+      "phoneNumber": "032546486",
+      "address": "257 Clove Crossing",
       "role": "user",
       "id": "4753"
-    },
-    {
-      "userId": 3,
-      "userName": "ebrosoli2",
-      "password": "fG0(#ofQ!Pi{d9d{",
-      "email": "kpoynser2@weebly.com",
-      "phoneNumber": "197-381-3872",
-      "address": "6 Marquette Crossing",
-      "role": "user",
-      "id": "747c"
-    },
-    {
-      "id": "951b",
-      "userName": "porxyz1234",
-      "password": "123456",
-      "email": "qminh6464@gmail.com",
-      "phoneNumber": "0348765697",
-      "address": "Ha Noi",
-      "role": "user"
-    },
-    {
-      "id": "a14e",
-      "userName": "vuong23",
-      "password": "123456",
-      "email": "vuongddhe172450@fpt.edu.vn",
-      "phoneNumber": "0912121214",
-      "address": "ho chi minh",
-      "role": "user"
-    },
-    {
-      "id": "2105",
-      "userName": "vuong23",
-      "password": "123456",
-      "email": "enzo8@gmail.co",
-      "phoneNumber": "0903279823",
-      "address": "ho chi minh",
-      "id": "b0b1",
-      "userName": "pham34074@gmail.com",
-      "password": "1234567",
-      "email": "tuanpthe176307@fpt.edu.vn",
-      "phoneNumber": "0963924763",
-      "address": "Thạch hòa",
-      "role": "user"
     }
   ],
   "brands": [
     {
       "id": "1",
-      "brandName": "Mercedes-Benz"
+      "brandName": "Mercedes-Benz",
+      "image": "https://www.mercedes-benz.com/content/dam/brandhub/global/logos/MB-star_n_web.svg/_jcr_content/renditions/original"
     },
     {
       "id": "2",
-      "brandName": "BMW"
+      "brandName": "BMW",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/900px-BMW.svg.png"
     },
     {
       "id": "3",
-      "brandName": "Pontiac"
+      "brandName": "Audi",
+      "image": "https://di-uploads-pod3.dealerinspire.com/vindeversautohausofsylvania/uploads/2018/10/Audi-Logo-Banner.png"
     },
     {
       "id": "4",
-      "brandName": "Infiniti"
+      "brandName": "Ferrari",
+      "image": "https://t3.gstatic.com/images?q=tbn:ANd9GcQha4RTkLm8xmg6KLVyQzumR5UROBtlziv89ax2kbKl8LeL1FBM"
     },
     {
       "id": "5",
-      "brandName": "Mitsubishi"
+      "brandName": "Lamborghini",
+      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/d/df/Lamborghini_Logo.svg/270px-Lamborghini_Logo.svg.png"
     }
   ],
   "cars": [
     {
       "id": "1",
       "name": "BMW X1000",
-      "price": "1500000000",
-      "year": "",
-      "available": "5",
+      "price": "8888",
+      "year": "2024-07-19",
+      "available": false,
       "description": "The BMW X3 is a statement of unlimited opportunities and an expression of sheer presence and freedom. From the very first glance, it impresses with its athletic appearance and fascinates with an exciting driving experience. Thanks to partially autonomous driving and the intelligent all-wheel drive system BMW xDrive, it offers supreme ride comfort both on and off the road. It therefore redefines the benchmarks in its class and makes one thing unmistakably clear: there is a great difference in how you reach your destinations.",
       "image": [
         {
@@ -110,21 +130,18 @@
         {
           "id": 4,
           "name": "https://www.bmw.vn/content/bmw/marketASIA/bmw_vn/en_VN/all-models/x-series/X3/2019/bmw-x3-inspire/jcr:content/par/mosaicgallery_35c8/items/mosaicgalleryitem_a4/image.transform/mosaic685/image.1556017736625.jpg"
-        },
-        {
-          "id": 5,
-          "name": "https://www.bmw.vn/content/bmw/marketASIA/bmw_vn/en_VN/all-models/x-series/X3/2019/bmw-x3-inspire/jcr:content/par/mosaicgallery_35c8/items/mosaicgalleryitem_7b/image.transform/mosaic485/image.1556017736789.jpg"
         }
       ],
-      "rating": "5",
-      "brand": "1"
+      "brand": 2,
+      "rating": 4,
+      "model": "X"
     },
     {
       "id": "2",
       "name": "BWM X4",
       "price": 1700000000,
       "year": "1/22/2024",
-      "available": 5,
+      "available": true,
       "description": "The BMW X3 is a statement of unlimited opportunities and an expression of sheer presence and freedom. From the very first glance, it impresses with its athletic appearance and fascinates with an exciting driving experience. Thanks to partially autonomous driving and the intelligent all-wheel drive system BMW xDrive, it offers supreme ride comfort both on and off the road. It therefore redefines the benchmarks in its class and makes one thing unmistakably clear: there is a great difference in how you reach your destinations.",
       "image": [
         {
@@ -149,14 +166,15 @@
         }
       ],
       "rating": 5,
-      "brand": 2
+      "brand": 2,
+      "model": "X"
     },
     {
       "id": "3",
       "name": "THE NEW BWM X6",
       "price": 3900000000,
       "year": "1/22/2024",
-      "available": 5,
+      "available": false,
       "description": "The BMW X3 is a statement of unlimited opportunities and an expression of sheer presence and freedom. From the very first glance, it impresses with its athletic appearance and fascinates with an exciting driving experience. Thanks to partially autonomous driving and the intelligent all-wheel drive system BMW xDrive, it offers supreme ride comfort both on and off the road. It therefore redefines the benchmarks in its class and makes one thing unmistakably clear: there is a great difference in how you reach your destinations.",
       "image": [
         {
@@ -181,14 +199,15 @@
         }
       ],
       "rating": 5,
-      "brand": 2
+      "brand": 2,
+      "model": "X"
     },
     {
       "id": "4",
       "name": "THE NEW BMW X7",
       "price": 1700000000,
       "year": "1/22/2024",
-      "available": 5,
+      "available": true,
       "description": "The BMW X3 is a statement of unlimited opportunities and an expression of sheer presence and freedom. From the very first glance, it impresses with its athletic appearance and fascinates with an exciting driving experience. Thanks to partially autonomous driving and the intelligent all-wheel drive system BMW xDrive, it offers supreme ride comfort both on and off the road. It therefore redefines the benchmarks in its class and makes one thing unmistakably clear: there is a great difference in how you reach your destinations.",
       "image": [
         {
@@ -213,14 +232,15 @@
         }
       ],
       "rating": 5,
-      "brand": 2
+      "brand": 2,
+      "model": "X"
     },
     {
       "id": "5",
       "name": "THE NEW 4 SERIES",
       "price": 4700000000,
       "year": "1/22/2024",
-      "available": 5,
+      "available": true,
       "description": "The BMW X3 is a statement of unlimited opportunities and an expression of sheer presence and freedom. From the very first glance, it impresses with its athletic appearance and fascinates with an exciting driving experience. Thanks to partially autonomous driving and the intelligent all-wheel drive system BMW xDrive, it offers supreme ride comfort both on and off the road. It therefore redefines the benchmarks in its class and makes one thing unmistakably clear: there is a great difference in how you reach your destinations.",
       "image": [
         {
@@ -245,14 +265,15 @@
         }
       ],
       "rating": 5,
-      "brand": 2
+      "brand": 2,
+      "model": "series"
     },
     {
       "id": "6",
       "name": "BMW I3",
       "price": 4000000000,
       "year": "1/22/2024",
-      "available": 5,
+      "available": true,
       "description": "The BMW X3 is a statement of unlimited opportunities and an expression of sheer presence and freedom. From the very first glance, it impresses with its athletic appearance and fascinates with an exciting driving experience. Thanks to partially autonomous driving and the intelligent all-wheel drive system BMW xDrive, it offers supreme ride comfort both on and off the road. It therefore redefines the benchmarks in its class and makes one thing unmistakably clear: there is a great difference in how you reach your destinations.",
       "image": [
         {
@@ -277,14 +298,15 @@
         }
       ],
       "rating": 5,
-      "brand": 2
+      "brand": 2,
+      "model": "i"
     },
     {
       "id": "7",
       "name": "BMW I4",
       "price": 4100000000,
       "year": "1/22/2024",
-      "available": 5,
+      "available": true,
       "description": "The BMW X3 is a statement of unlimited opportunities and an expression of sheer presence and freedom. From the very first glance, it impresses with its athletic appearance and fascinates with an exciting driving experience. Thanks to partially autonomous driving and the intelligent all-wheel drive system BMW xDrive, it offers supreme ride comfort both on and off the road. It therefore redefines the benchmarks in its class and makes one thing unmistakably clear: there is a great difference in how you reach your destinations.",
       "image": [
         {
@@ -309,14 +331,15 @@
         }
       ],
       "rating": 5,
-      "brand": 2
+      "brand": 2,
+      "model": "i"
     },
     {
       "id": "8",
       "name": "BMW I7",
       "price": 5700000000,
       "year": "1/22/2024",
-      "available": 5,
+      "available": true,
       "description": "The BMW X3 is a statement of unlimited opportunities and an expression of sheer presence and freedom. From the very first glance, it impresses with its athletic appearance and fascinates with an exciting driving experience. Thanks to partially autonomous driving and the intelligent all-wheel drive system BMW xDrive, it offers supreme ride comfort both on and off the road. It therefore redefines the benchmarks in its class and makes one thing unmistakably clear: there is a great difference in how you reach your destinations.",
       "image": [
         {
@@ -341,14 +364,15 @@
         }
       ],
       "rating": 5,
-      "brand": 2
+      "brand": 2,
+      "model": "i"
     },
     {
       "id": "9",
       "name": "BMW NEW 37",
       "price": 4150000000,
       "year": "1/22/2024",
-      "available": 5,
+      "available": true,
       "description": "The BMW X3 is a statement of unlimited opportunities and an expression of sheer presence and freedom. From the very first glance, it impresses with its athletic appearance and fascinates with an exciting driving experience. Thanks to partially autonomous driving and the intelligent all-wheel drive system BMW xDrive, it offers supreme ride comfort both on and off the road. It therefore redefines the benchmarks in its class and makes one thing unmistakably clear: there is a great difference in how you reach your destinations.",
       "image": [
         {
@@ -373,14 +397,15 @@
         }
       ],
       "rating": 5,
-      "brand": 1
+      "brand": 2,
+      "model": "series"
     },
     {
       "id": "10",
       "name": "BMW NEW XM",
       "price": 2400000000,
       "year": "1/22/2024",
-      "available": 5,
+      "available": true,
       "description": "The BMW X3 is a statement of unlimited opportunities and an expression of sheer presence and freedom. From the very first glance, it impresses with its athletic appearance and fascinates with an exciting driving experience. Thanks to partially autonomous driving and the intelligent all-wheel drive system BMW xDrive, it offers supreme ride comfort both on and off the road. It therefore redefines the benchmarks in its class and makes one thing unmistakably clear: there is a great difference in how you reach your destinations.",
       "image": [
         {
@@ -405,22 +430,24 @@
         }
       ],
       "rating": 4,
-      "brand": 1
+      "brand": 2,
+      "model": "x"
     },
     {
       "id": "11",
       "name": "cccc",
       "brand": 1,
-      "price": "123456789",
+      "price": 123456789,
       "year": "2024-07-25",
-      "available": "1",
+      "available": true,
       "description": "cccccc",
       "image": [
         {
           "id": 791047,
           "name": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331cqgv2Z7d%25i02uCaY3MuO2kOHUtWPfbYfvrZg10tLhu1XzWVo7puMLWFmdkAj5DOPEtpuZ8XgY1nTNIowJ4HO3zkyXq%25sGM8snGhMQSk%2508Xc9Vo74giAqNF1VgxNJ0%25ls2oub5imC2yRCzXeTt%25ViPRKVZVYXfvWh1DMztIV8eqVYDafHJEjmztYRSJOM67aftxdT%25yw1RSfWQlEC%25VxdSeZsNeuzWQdjc0kW3aeZQ6KoInXRjcZwBLnUrx6Kc%252yu84WwBKupCoeFe%252B3inoVIjup2XH5rcv63iprJ849GwXHi4TPHB9%25rJHFlMa3ou4TJIsDxyL3FlTv0YhiyXIslGAtqjCrv0s9OfmuE4GA0ogSPaNF9OALUdtzkIogOybAM5nvLUgChOU45GybUEqgtE89ChbNmUfCPoEqhk7bSKMLNmqn1hdmDyk7m5VqQpYCn178zm9qtE5V1Pa7oDfN8zVMRcsmSkPazDxKGCdnMRaYWBoZQ5DxRte2ptZ8YWxfjpiScPteWS6iH5KMfjedwHJUBDS6jQ%25J9i2Ydw6ZuToPptQ%25wc3lP9ifZu%25KXsEyHSc3uBr0URJdKX324AbMTQBrXpFOhslZ24riIg6gscpF4HviUd0KiIFJGHxXABHvIT9JWOO2JGvloT44gpT9GsLleUUilo90ysP2bH8oVe7C9cvwRL8kIVFHGO6AusTSz"
         }
-      ]
+      ],
+      "model": "i"
     }
   ]
 }

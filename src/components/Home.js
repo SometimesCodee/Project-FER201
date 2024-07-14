@@ -13,18 +13,23 @@ export default function Home() {
     const [cars, setCars] = useState([]);
     const [brands, setBrands] = useState([]);
     const [filteredCars, setFilteredCars] = useState([]);
+    const [models, setModels] = useState([]);
 
     const [formData, setFormData] = useState({
         search: '',
-        brand: [],
+        brand: '',
         price: 'all',
+        model: ''
     });
+
+    console.log(formData);
 
     useEffect(() => {
         axios.get('http://localhost:9999/cars')
             .then(res => {
                 setCars(res.data);
                 setFilteredCars(res.data);
+                setModels([...new Set(res.data.map(car => car.model))]);
             })
             .catch(err => {
                 console.log(err);
@@ -64,33 +69,48 @@ export default function Home() {
         ));
     };
 
-    const renderBrands = () => {
-        return brands.map(brand => (
+    const renderModel = () => {
+        return models.map((model, index) => (
             <Form.Check
-                key={brand.id}
+                key={index}
                 type="checkbox"
-                label={brand.brandName}
-                name='brand'
-                value={brand.id}
+                label={model}
+                name='model'
+                value={model}
                 onChange={handleChange}
                 className="mb-2"
             />
         ));
     };
 
+    const renderBrands = () => {
+        return brands.map((brand, index) => (
+            <div key={index} className="col-md-2" style={{ cursor: "pointer" }} onClick={() => handleBrandClick(brand.id)}>
+                <img style={{ width: "70%" }} src={brand.image} alt=''></img>
+            </div>
+        ));
+    };
+
+    const handleBrandClick = (brandId) => {
+        setFormData({
+            ...formData,
+            brand: brandId
+        });
+    };
+
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
 
         if (type === 'checkbox') {
-            let updatedBrands = [...formData.brand];
+            let updatedModels = [...formData.model];
             if (checked) {
-                updatedBrands.push(parseInt(value));
+                updatedModels.push(value);
             } else {
-                updatedBrands = updatedBrands.filter(brandId => brandId !== parseInt(value));
+                updatedModels = updatedModels.filter(model => model !== value);
             }
             setFormData({
                 ...formData,
-                brand: updatedBrands
+                model: updatedModels
             });
         } else {
             setFormData({
@@ -110,12 +130,16 @@ export default function Home() {
     const filterCars = () => {
         let tempCars = [...cars];
 
+        if (formData.brand) {
+            tempCars = tempCars.filter(car => Number(car.brand) === Number(formData.brand));
+        }
+
         if (formData.search) {
             tempCars = tempCars.filter(car => car.name.toLowerCase().includes(formData.search.toLowerCase()));
         }
 
-        if (formData.brand.length > 0) {
-            tempCars = tempCars.filter(car => formData.brand.includes(car.brand));
+        if (formData.model.length > 0) {
+            tempCars = tempCars.filter(car => formData.model.includes(car.model));
         }
 
         if (formData.price !== 'all') {
@@ -134,6 +158,10 @@ export default function Home() {
                     <source src="/assets/Bugatti Tourbillon - Eu Sento Gabu - 4K.mp4" type="video/mp4" />
                 </video>
                 <div className='container mt-5'>
+                    <h1 className='text-center mb-5'>BRAND</h1>
+                    <div className='row brands justify-content-center mb-5'>
+                        {renderBrands()}
+                    </div>
                     <div className='row'>
                         <div className='col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-4'>
                             <Form className='mb-3'>
@@ -146,8 +174,8 @@ export default function Home() {
                                 <button className='btn btn-dark mt-2'><IoIosSearch /></button>
                             </Form>
                             <div className='mb-4'>
-                                <h6>Brands:</h6>
-                                {renderBrands()}
+                                <h6>Model:</h6>
+                                {renderModel()}
                             </div>
                             <div>
                                 <h6>Price:</h6>
@@ -191,7 +219,7 @@ export default function Home() {
                         </div>
                         <div className='col-lg-9 col-md-8 col-sm-6 col-xs-12'>
                             <div className='d-flex justify-content-between mb-3'>
-                                <h3>Products</h3>
+                                <h3>Popular products</h3>
                             </div>
                             <div className='row'>
                                 {renderCars()}
