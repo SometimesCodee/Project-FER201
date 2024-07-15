@@ -143,7 +143,7 @@ const ManagerCar = () => {
     return (
          <>
             <Alert variant="success" className='row'>
-                <h1 className='col-md-12' style={{ textAlign: 'center' }}>Manager Car</h1>
+                <h1 className='col-md-12' style={{ textAlign: 'center' }}>Manager System</h1>
                 <div className='col-md-9'>
 
                 </div>
@@ -174,6 +174,11 @@ const ManagerCar = () => {
                             </option>
                         ))}
                     </FormSelect>
+                    <Link to="/manaCustomer">
+                        <Button style={{ width: "45%", fontSize: 15, marginLeft : '20px' }} className="btn-dark">
+                            Manager Account Customer
+                        </Button>
+                    </Link>
                 </Col>
                 <Col xs={12} md={4} className="mb-2">
                     <FormControl
@@ -186,10 +191,16 @@ const ManagerCar = () => {
                 </Col>
                 <Col xs={12} md={4} className="text-md-end">
                     <Link to="/addCar">
-                        <Button style={{ width: "50%", fontSize: 20 }} className="btn-dark">
+                        <Button style={{ width: "50%", fontSize: 20 }} className="btn-warning">
                             Create a new product
                         </Button>
                     </Link>
+                    <Link to="/addBrand">
+                        <Button style={{ width: "45%", fontSize: 20, marginLeft : '20px' }} className="btn-warning">
+                            Add new brand
+                        </Button>
+                    </Link>
+                    
                 </Col>
             </Row>
             <Row>
@@ -219,7 +230,7 @@ const ManagerCar = () => {
                                     </td>
                                     <td>{p.price}</td>
                                     <td>{formattedDate(p.year)}</td>
-                                    <td>{p.available}</td>
+                                    <td>{p.available ? "Còn Hàng" : "Hết Hàng"}</td>
                                     <td>{p.description}</td>
                                     <td><img src={`${p.image[0].name}`} alt={p.name} style={{ width: '50px', height: '50px' }} /></td>
                                     <td>{getBrandById(p.brand)}</td>

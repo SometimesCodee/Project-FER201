@@ -48,6 +48,41 @@
         "address": "257 Clove Crossing",
         "role": "user"
       }
+    },
+    {
+      "id": "c6b1",
+      "cart": [
+        {
+          "id": "1",
+          "name": "iPhone 15 Pro Max 256GB",
+          "price": 29690000,
+          "image": "product1.png",
+          "quantity": 2,
+          "total": 0
+        }
+      ],
+      "loggedInUser": null
+    },
+    {
+      "id": "980f",
+      "cart": [
+        {
+          "id": "6",
+          "name": "BMW I3",
+          "price": 4000000000,
+          "image": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331cqgv2Z7d%25i02uCaY3MuO2kOHUtWPfbYf6JiN10tLhu1XzWVo7puMLWFmdkAj5DOPMtExZ8XgY1nTNIowJ4HO3zkyXq%25sGM8snGhMQSk%2508Xc9Vo74gSZWNF1VgxNJ0%25ls2oub5imC2yRCzXeTt%25ViPRKVZVYpzsWh1DMzti08eqVYDafHLojmztYRSJyR67aftxdIXCw1RSfWQvC0%25VxdSeZGheuzWQdjc9ef3aeZQ6KCInXRjcZwBEnmrx6Kc%252Nu74WwBKupk3IFe%252B3in2ZIjup2XH5psv63iprJ8V%25GwXHi4TPBA9%25rJHFlM2oou4TJIsDxgL3FlTv0YWCyXIslGAtqHCrv0s9Ofm6E4GA0ogS73NF9OALUdMRkIogOybQfsnvLUgChZS95GybUEqcdx89ChbNmKizPoEqhk7bqvMLNmqn1hrJDyk7m5VqQ5YCn178zmZntE5V1Pa7cVfN8zVMR1L7SkPazDxVytdnMRaYWB2YQ5DxRte2OVZ8YWxfjpyKcPteWS6iHdKMfjedwHJUBDS6jQ%25J9k2Ydw6ZuTyoptQ%25wc3lO5ifZu%25KXsgJHSc3uBr0W0JdKX324BVwTQBrXpF2zllZ24riIpuuscpF4Hvia00KiIFJGzHlABHvIT9Te1O2kvmRhoId4eVGkCrmX2FsWl6JiY7",
+          "quantity": 1
+        }
+      ],
+      "loggedInUser": {
+        "userName": "customer1",
+        "password": "123456",
+        "email": "dinhvuong2311@gmail.com",
+        "phoneNumber": "032546486",
+        "address": "257 Clove Crossing",
+        "role": "user",
+        "id": "4753"
+      }
     }
   ],
   "users": [
@@ -58,7 +93,8 @@
       "email": "bcotterrill0@yelp.com",
       "phoneNumber": "855-145-3698",
       "address": "80 Stoughton Center",
-      "role": "admin"
+      "role": "admin",
+      "status": 1
     },
     {
       "id": "2",
@@ -67,16 +103,18 @@
       "email": "rcrass1@flavors.me",
       "phoneNumber": "570-233-1832",
       "address": "2357 Clove Crossing",
-      "role": "user"
+      "role": "user",
+      "status": 1
     },
     {
+      "id": "4753",
       "userName": "customer1",
       "password": "123456",
       "email": "dinhvuong2311@gmail.com",
       "phoneNumber": "032546486",
       "address": "257 Clove Crossing",
       "role": "user",
-      "id": "4753"
+      "status": 0
     }
   ],
   "brands": [
@@ -104,6 +142,11 @@
       "id": "5",
       "brandName": "Lamborghini",
       "image": "https://upload.wikimedia.org/wikipedia/en/thumb/d/df/Lamborghini_Logo.svg/270px-Lamborghini_Logo.svg.png"
+    },
+    {
+      "id": "599785",
+      "brandName": "Honda",
+      "image": "https://static.vecteezy.com/system/resources/previews/020/336/704/original/honda-logo-honda-icon-free-free-vector.jpg"
     }
   ],
   "cars": [
@@ -448,6 +491,36 @@
         }
       ],
       "model": "i"
+    },
+    {
+      "id": "12",
+      "name": "HONDA civic",
+      "brand": 599785,
+      "price": "8987989",
+      "year": "2024-07-19",
+      "available": "434",
+      "description": "gooood",
+      "image": [
+        {
+          "id": 206376,
+          "name": "https://carpla.vn/blog/wp-content/uploads/2023/10/xe-oto-honda.jpg"
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "name": "nnn",
+      "brand": 1,
+      "price": "6868",
+      "year": "2024-07-05",
+      "available": true,
+      "description": "ggggg",
+      "image": [
+        {
+          "id": 942268,
+          "name": "https://vnn-imgs-f.vgcloud.vn/2019/03/19/18/o-to-moi-4.jpg"
+        }
+      ]
     }
   ]
 }

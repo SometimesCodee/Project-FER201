@@ -23,7 +23,7 @@ const CreateCar = () => {
   const name = useRef();
   const price = useRef();
   const year = useRef();
-  const available = useRef();
+  // const available = useRef();
   const description = useRef();
   const imageURL = useRef();
   const brandSelect = useRef();
@@ -54,7 +54,7 @@ const CreateCar = () => {
       brandSelect.current.value === "" ||
       price.current.value === "" ||
       year.current.value === "" ||
-      available.current.value === "" ||
+      // available.current.value === "" ||
       description.current.value === "" ||
       images.length === 0
     ) {
@@ -67,7 +67,7 @@ const CreateCar = () => {
           brand: parseInt(brandSelect.current.value),
           price: price.current.value,
           year: year.current.value,
-          available: available.current.value,
+          available: true,
           description: description.current.value,
           image: images,
         };
@@ -108,7 +108,7 @@ const CreateCar = () => {
 
   return (
     <Container className="create-car-container">
-      <Button className="back-button" style={{marginTop : '30px'}}>
+      <Button className="back-button" style={{marginTop : '30px', width : '15%'}}>
         <Link to="/admin" style={{color : 'black'}}>Back to Home</Link>
       </Button>
       <Row className="d-flex flex-column">
@@ -141,12 +141,12 @@ const CreateCar = () => {
             <FormControl type="date" ref={year} />
           </Col>
         </FormGroup>
-        <FormGroup as={Row} className="form-group-spacing">
+        {/* <FormGroup as={Row} className="form-group-spacing">
           <FormLabel column sm={2}>Available:</FormLabel>
           <Col sm={10}>
             <FormControl type="number" ref={available} />
           </Col>
-        </FormGroup>
+        </FormGroup> */}
         <FormGroup as={Row} className="form-group-spacing">
           <FormLabel column sm={2}>Description:</FormLabel>
           <Col sm={10}>

@@ -1,5 +1,5 @@
 // reducers.js
-import { ADD_CARS, DELETE_CARS, FETCH_BRANDS, FETCH_CARS } from './AdminAction';
+import { ADD_BRAND, ADD_CARS, DELETE_CARS, FETCH_BRANDS, FETCH_CARS } from './AdminAction';
 
 const initialState = {
     brand: [],
@@ -28,6 +28,11 @@ const AdminReducer = (state = initialState, action) => {
                ...state,
                 cars: [...state.cars, action.payload]
             };   
+            case ADD_BRAND:
+                return {
+                  ...state,
+                  brands: [...state.brand, action.payload],
+                };    
         default:
             return state;
     }
