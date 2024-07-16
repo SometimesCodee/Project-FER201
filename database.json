@@ -83,6 +83,28 @@
         "role": "user",
         "id": "4753"
       }
+    },
+    {
+      "id": "e6c9",
+      "cart": [
+        {
+          "id": "4",
+          "name": "THE NEW BMW X7",
+          "price": 1700000000,
+          "image": "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331cqgv2Z7d%25i02uCaY3MuO2kOHUtWPfbYfFd1v10tLhu1XzWVo7puMLWFmdkAj5DOP7IIBZ8XgY1nTNIowJ4HO3zkyXq%25sGM8snGhMQSk%2508Xc9Vo74gSQNNF1VgxNJ0%25ls2oub5imC2yRCzXeTt%25ViPRKVZVYVOVWh1DMztINpeqVYDafHLojmztYRSJyN67aftxdTCIw1RSfWQveE%25VxdSeZGjbuzWQdjcyF23aeZQ6KCkpXRjcZwBEn4rx6Kc%252Nu74WwBKupkm1Fe%252B3in7qIjup2XH5yDv63iprJ8mLGwXHi4TP7I9%25rJHFlM5hou4TJIsHkIL3FlTv0JnFyXIslGAnVNCrms8fnOl6JQD0mbH8irTod9cvFxP",
+          "quantity": 1
+        }
+      ],
+      "loggedInUser": {
+        "id": "4753",
+        "userName": "customer1",
+        "password": "123456",
+        "email": "dinhvuong2311@gmail.com",
+        "phoneNumber": "032546486",
+        "address": "257 Clove Crossing",
+        "role": "user",
+        "status": 0
+      }
     }
   ],
   "users": [
@@ -521,6 +543,23 @@
           "name": "https://vnn-imgs-f.vgcloud.vn/2019/03/19/18/o-to-moi-4.jpg"
         }
       ]
+    },
+    {
+      "id": "14",
+      "name": "lambo",
+      "price": "78787878",
+      "year": "2024-07-12",
+      "model": "xx",
+      "rating": "10",
+      "available": true,
+      "description": "gsahdghsaghjd",
+      "image": [
+        {
+          "id": 760466,
+          "name": "https://png.pngtree.com/thumb_back/fh260/background/20230704/pngtree-3d-rendering-of-the-lamborghini-veneno-supercar-image_3706296.jpg"
+        }
+      ],
+      "brand": "1"
     }
   ]
 }

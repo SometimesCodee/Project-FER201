@@ -25,6 +25,8 @@ const CreateCar = () => {
   const year = useRef();
   // const available = useRef();
   const description = useRef();
+  const model = useRef()
+  const rating = useRef()
   const imageURL = useRef();
   const brandSelect = useRef();
   const brands = useSelector(state => state.admin.brand || []);
@@ -54,6 +56,8 @@ const CreateCar = () => {
       brandSelect.current.value === "" ||
       price.current.value === "" ||
       year.current.value === "" ||
+      model.current.value === "" ||
+      rating.current.value === "" ||
       // available.current.value === "" ||
       description.current.value === "" ||
       images.length === 0
@@ -66,6 +70,8 @@ const CreateCar = () => {
           name: name.current.value,
           brand: parseInt(brandSelect.current.value),
           price: price.current.value,
+          model : model.current.value,
+          rating : rating.current.value,
           year: year.current.value,
           available: true,
           description: description.current.value,
@@ -151,6 +157,18 @@ const CreateCar = () => {
           <FormLabel column sm={2}>Description:</FormLabel>
           <Col sm={10}>
             <FormControl as="textarea" rows={3} ref={description} />
+          </Col>
+        </FormGroup>
+        <FormGroup as={Row} className="form-group-spacing">
+          <FormLabel column sm={2}>Model:</FormLabel>
+          <Col sm={10}>
+            <FormControl as="textarea" rows={3} ref={model} />
+          </Col>
+        </FormGroup>
+        <FormGroup as={Row} className="form-group-spacing">
+          <FormLabel column sm={2}>Rating:</FormLabel>
+          <Col sm={10}>
+            <FormControl as="textarea" rows={3} ref={rating} />
           </Col>
         </FormGroup>
         <FormGroup as={Row} className="form-group-spacing">

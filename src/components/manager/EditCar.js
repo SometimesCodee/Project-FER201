@@ -30,7 +30,9 @@ function EditCar() {
   const name = useRef();
   const price = useRef();
   const year = useRef();
-  const available = useRef();
+  // const available = useRef();
+  const model = useRef();
+  const rating = useRef();
   const description = useRef();
   const brand = useRef();
   const imageURL = useRef();
@@ -86,7 +88,9 @@ function EditCar() {
       name: name.current.value,
       price: price.current.value,
       year: year.current.value,
-      available: available.current.value,
+      model: model.current.value,
+      rating: rating.current.value,
+      available: true,
       description: description.current.value,
       image: Product.image,
       brand: brand.current.value,
@@ -138,6 +142,24 @@ function EditCar() {
             />
           </FormGroup>
           <FormGroup>
+            <label>Model:</label>
+            <FormControl
+              type="text"
+              id="model"
+              defaultValue={Product.model}
+              ref={model}
+            />
+          </FormGroup>
+          <FormGroup>
+            <label>Rating:</label>
+            <FormControl
+              type="number"
+              id="rating"
+              defaultValue={Product.rating}
+              ref={rating}
+            />
+          </FormGroup>
+          <FormGroup>
             <label>Year:</label>
             <FormControl
               type="date"
@@ -146,7 +168,7 @@ function EditCar() {
               ref={year}
             />
           </FormGroup>
-          <FormGroup>
+          {/* <FormGroup>
             <label>Available:</label>
             <FormControl
               type="number"
@@ -154,7 +176,7 @@ function EditCar() {
               defaultValue={Product.available}
               ref={available}
             />
-          </FormGroup>
+          </FormGroup> */}
           <FormGroup>
             <label>Description:</label>
             <FormControl
